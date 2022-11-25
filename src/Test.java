@@ -2,7 +2,6 @@ import java.util.Scanner;
 
 public class Test {
     public static void main(String[] args) {
-//        System.out.println((1 - 4) % 4);
         Scanner sc = new Scanner(System.in);
 
         System.out.printf("%s :\n", "Masukkan ukuran labirin");
@@ -27,6 +26,7 @@ public class Test {
         Pair finish = new Pair(++xFinish, ++yFinish);
 
         // Collecting Maze Data
+        System.out.println("Masukkan bentuk puzzle (NESW) :");
         for (int i = 1; i < y + 1; i++) {
             String[] s = sc.next().split("-");
             for (int j = 0; j < s.length; j++) {
@@ -40,7 +40,7 @@ public class Test {
         astar.printMaze();
         System.out.println();
         int stepCount = astar.aStar();
-        System.out.println(stepCount);
+        System.out.println("Langkah yang ditempuh : " + stepCount);
         astar.printPath();
     }
 }
